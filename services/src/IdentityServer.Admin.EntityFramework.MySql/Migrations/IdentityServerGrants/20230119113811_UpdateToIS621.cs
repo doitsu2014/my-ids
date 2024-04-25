@@ -1,8 +1,8 @@
-﻿#nullable disable
-
 using System;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
 
 namespace IdentityServer.Admin.EntityFramework.MySql.Migrations.IdentityServerGrants
 {

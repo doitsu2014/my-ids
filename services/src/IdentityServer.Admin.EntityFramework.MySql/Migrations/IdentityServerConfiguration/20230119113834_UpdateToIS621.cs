@@ -1,6 +1,6 @@
-﻿#nullable disable
-
 using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
 
 namespace IdentityServer.Admin.EntityFramework.MySql.Migrations.IdentityServerConfiguration
 {

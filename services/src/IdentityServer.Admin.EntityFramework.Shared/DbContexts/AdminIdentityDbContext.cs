@@ -1,10 +1,10 @@
-﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
+// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
-using Dtech.IdentityServer.Domain.Entities.Identity;
-using IdentityServer.Admin.EntityFramework.Shared.Constants;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using IdentityServer.Admin.EntityFramework.Shared.Constants;
+using IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
 
 namespace IdentityServer.Admin.EntityFramework.Shared.DbContexts
 {

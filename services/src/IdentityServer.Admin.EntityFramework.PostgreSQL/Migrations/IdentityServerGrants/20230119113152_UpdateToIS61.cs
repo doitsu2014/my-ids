@@ -1,8 +1,8 @@
-﻿#nullable disable
-
 using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+
+#nullable disable
 
 namespace IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.IdentityServerGrants
 {

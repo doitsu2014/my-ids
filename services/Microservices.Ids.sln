@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4C598E54-854
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{068765D3-4731-4260-913A-3DAA16B797AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.ApplicationCore", "src\IdentityServer.ApplicationCore\IdentityServer.ApplicationCore.csproj", "{DD88B7E7-9281-404A-92BF-209FDBAB343C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{2CA92780-6075-4550-9CED-F929DDACDEBE}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -33,8 +31,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Admin.Api", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Admin", "src\IdentityServer.Admin\IdentityServer.Admin.csproj", "{63FD968E-790A-46AA-B6E7-1B24B157455B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dtech.IdentityServer.Domain", "src\Dtech.IdentityServer.Domain\Dtech.IdentityServer.Domain.csproj", "{89B4B4EC-75CB-4312-8B86-F148C92AC06A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,8 +40,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DD88B7E7-9281-404A-92BF-209FDBAB343C} = {4C598E54-8546-4970-A600-52848F23FFF6}
-		{89B4B4EC-75CB-4312-8B86-F148C92AC06A} = {4C598E54-8546-4970-A600-52848F23FFF6}
 		{63FD968E-790A-46AA-B6E7-1B24B157455B} = {4C598E54-8546-4970-A600-52848F23FFF6}
 		{B3FED8EE-7DCF-4AB9-8BDD-BB553D518417} = {4C598E54-8546-4970-A600-52848F23FFF6}
 		{A08AA103-04A9-4232-8B0D-A461AA5C839A} = {4C598E54-8546-4970-A600-52848F23FFF6}
@@ -56,10 +50,6 @@ Global
 		{67A70977-4C49-44B2-B4F5-AA16B2F133E5} = {4C598E54-8546-4970-A600-52848F23FFF6}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DD88B7E7-9281-404A-92BF-209FDBAB343C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD88B7E7-9281-404A-92BF-209FDBAB343C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD88B7E7-9281-404A-92BF-209FDBAB343C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD88B7E7-9281-404A-92BF-209FDBAB343C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{67A70977-4C49-44B2-B4F5-AA16B2F133E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{67A70977-4C49-44B2-B4F5-AA16B2F133E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67A70977-4C49-44B2-B4F5-AA16B2F133E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -92,9 +82,5 @@ Global
 		{63FD968E-790A-46AA-B6E7-1B24B157455B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63FD968E-790A-46AA-B6E7-1B24B157455B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63FD968E-790A-46AA-B6E7-1B24B157455B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89B4B4EC-75CB-4312-8B86-F148C92AC06A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89B4B4EC-75CB-4312-8B86-F148C92AC06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89B4B4EC-75CB-4312-8B86-F148C92AC06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89B4B4EC-75CB-4312-8B86-F148C92AC06A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

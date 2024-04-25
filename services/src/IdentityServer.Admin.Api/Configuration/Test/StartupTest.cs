@@ -1,16 +1,16 @@
-﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
+// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
-using Dtech.IdentityServer.Domain.Entities.Identity;
-using IdentityServer.Admin.Api.Helpers;
-using IdentityServer.Admin.Api.Middlewares;
-using IdentityServer.Admin.EntityFramework.Shared.DbContexts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using IdentityServer.Admin.Api.Helpers;
+using IdentityServer.Admin.Api.Middlewares;
+using IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
 
 namespace IdentityServer.Admin.Api.Configuration.Test
 {

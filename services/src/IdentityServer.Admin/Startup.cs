@@ -1,24 +1,23 @@
-﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
+// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
 using System.IdentityModel.Tokens.Jwt;
-using Dtech.IdentityServer.Domain.Entities.Identity;
-using IdentityServer.Admin.Configuration.Database;
-using IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using IdentityServer.Admin.Helpers;
-using IdentityServer.Shared.Dtos;
-using IdentityServer.Shared.Dtos.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Skoruba.AuditLogging.EntityFramework.Entities;
+using IdentityServer.Admin.Configuration.Database;
+using IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
+using IdentityServer.Admin.Helpers;
 using Skoruba.Duende.IdentityServer.Admin.UI.Helpers.ApplicationBuilder;
 using Skoruba.Duende.IdentityServer.Admin.UI.Helpers.DependencyInjection;
 using Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers;
+using IdentityServer.Shared.Dtos;
+using IdentityServer.Shared.Dtos.Identity;
 
 namespace IdentityServer.Admin
 {
@@ -28,7 +27,7 @@ namespace IdentityServer.Admin
         {
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             HostingEnvironment = env;
-            Configuration      = configuration;
+            Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -38,16 +37,13 @@ namespace IdentityServer.Admin
         public void ConfigureServices(IServiceCollection services)
         {
             // Adds the Duende IdentityServer Admin UI with custom options.
-            services
-                .AddIdentityServerAdminUI<AdminIdentityDbContext, IdentityServerConfigurationDbContext,
-                    IdentityServerPersistedGrantDbContext,
-                    AdminLogDbContext, AdminAuditLogDbContext, AuditLog, IdentityServerDataProtectionDbContext,
-                    UserIdentity, UserIdentityRole, UserIdentityUserClaim, UserIdentityUserRole,
-                    UserIdentityUserLogin, UserIdentityRoleClaim, UserIdentityUserToken, string,
-                    IdentityUserDto, IdentityRoleDto, IdentityUsersDto, IdentityRolesDto, IdentityUserRolesDto,
-                    IdentityUserClaimsDto, IdentityUserProviderDto, IdentityUserProvidersDto,
-                    IdentityUserChangePasswordDto,
-                    IdentityRoleClaimsDto, IdentityUserClaimDto, IdentityRoleClaimDto>(ConfigureUIOptions);
+            services.AddIdentityServerAdminUI<AdminIdentityDbContext, IdentityServerConfigurationDbContext, IdentityServerPersistedGrantDbContext,
+            AdminLogDbContext, AdminAuditLogDbContext, AuditLog, IdentityServerDataProtectionDbContext,
+                UserIdentity, UserIdentityRole, UserIdentityUserClaim, UserIdentityUserRole,
+                UserIdentityUserLogin, UserIdentityRoleClaim, UserIdentityUserToken, string,
+                IdentityUserDto, IdentityRoleDto, IdentityUsersDto, IdentityRolesDto, IdentityUserRolesDto,
+                IdentityUserClaimsDto, IdentityUserProviderDto, IdentityUserProvidersDto, IdentityUserChangePasswordDto,
+                IdentityRoleClaimsDto, IdentityUserClaimDto, IdentityRoleClaimDto>(ConfigureUIOptions);
 
             // Monitor changes in Admin UI views
             services.AddAdminUIRazorRuntimeCompilation(HostingEnvironment);
@@ -83,8 +79,7 @@ namespace IdentityServer.Admin
             }
 
             // Set migration assembly for application of db migrations
-            var migrationsAssembly =
-                MigrationAssemblyConfiguration.GetMigrationAssemblyByProvider(options.DatabaseProvider);
+            var migrationsAssembly = MigrationAssemblyConfiguration.GetMigrationAssemblyByProvider(options.DatabaseProvider);
             options.DatabaseMigrations.SetMigrationsAssemblies(migrationsAssembly);
 
             // Use production DbContexts and auth services.
@@ -92,3 +87,10 @@ namespace IdentityServer.Admin
         }
     }
 }
+
+
+
+
+
+
+

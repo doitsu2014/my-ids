@@ -1,0 +1,1 @@
+dotnet new skoruba.duende.isadmin --name IdentityServer --title 'Doitsu Technology Ids' --adminemail "admin@doitsu.tech" --adminpassword "Pa$$word1234" --adminrole Administrator --adminclientid dtech.superadmin --adminclientsecret zaQ@1234 --dockersupport true

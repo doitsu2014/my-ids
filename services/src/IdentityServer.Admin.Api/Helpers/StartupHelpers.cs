@@ -1,14 +1,9 @@
-﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
+// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
 using Duende.IdentityServer.EntityFramework.Options;
 using IdentityModel;
-using IdentityServer.Admin.Api.Configuration;
-using IdentityServer.Admin.Api.Configuration.ApplicationParts;
-using IdentityServer.Admin.Api.Configuration.AuditLogging;
-using IdentityServer.Admin.Api.Configuration.Constants;
-using IdentityServer.Admin.Api.Helpers.Localization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
@@ -18,11 +13,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.IdentityModel.Tokens;
 using Skoruba.AuditLogging.EntityFramework.DbContexts;
 using Skoruba.AuditLogging.EntityFramework.Entities;
 using Skoruba.AuditLogging.EntityFramework.Extensions;
 using Skoruba.AuditLogging.EntityFramework.Repositories;
 using Skoruba.AuditLogging.EntityFramework.Services;
+using IdentityServer.Admin.Api.Configuration;
+using IdentityServer.Admin.Api.Configuration.ApplicationParts;
+using IdentityServer.Admin.Api.Configuration.AuditLogging;
+using IdentityServer.Admin.Api.Configuration.Constants;
+using IdentityServer.Admin.Api.Helpers.Localization;
 using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
 using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.Configuration;
 using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Configuration.MySql;

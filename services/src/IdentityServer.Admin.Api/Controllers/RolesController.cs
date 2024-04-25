@@ -1,18 +1,18 @@
-﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
+// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using IdentityServer.Admin.Api.Configuration.Constants;
 using IdentityServer.Admin.Api.Dtos.Roles;
 using IdentityServer.Admin.Api.ExceptionHandling;
 using IdentityServer.Admin.Api.Helpers.Localization;
 using IdentityServer.Admin.Api.Resources;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Dtos.Identity;
 using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Services.Interfaces;
 

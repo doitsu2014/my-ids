@@ -1,5 +1,4 @@
-﻿using System;
-using Dtech.IdentityServer.Domain.Entities.Identity;
+using System;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -7,25 +6,25 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
 using Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers;
 using IdentityServer.STS.Identity.Configuration;
 using IdentityServer.STS.Identity.Configuration.Constants;
 using IdentityServer.STS.Identity.Configuration.Interfaces;
 using IdentityServer.STS.Identity.Helpers;
-using IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using Microsoft.AspNetCore.Http;
 
 namespace IdentityServer.STS.Identity
 {
     public class Startup
     {
-        public IConfiguration      Configuration { get; }
-        public IWebHostEnvironment Environment   { get; }
+        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Environment { get; }
 
         public Startup(IWebHostEnvironment environment, IConfiguration configuration)
         {
             Configuration = configuration;
-            Environment   = environment;
+            Environment = environment;
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -55,9 +54,7 @@ namespace IdentityServer.STS.Identity
             // Add authorization policies for MVC
             RegisterAuthorization(services);
 
-            services
-                .AddIdSHealthChecks<IdentityServerConfigurationDbContext, IdentityServerPersistedGrantDbContext,
-                    AdminIdentityDbContext, IdentityServerDataProtectionDbContext>(Configuration);
+            services.AddIdSHealthChecks<IdentityServerConfigurationDbContext, IdentityServerPersistedGrantDbContext, AdminIdentityDbContext, IdentityServerDataProtectionDbContext>(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -98,17 +95,13 @@ namespace IdentityServer.STS.Identity
 
         public virtual void RegisterDbContexts(IServiceCollection services)
         {
-            services
-                .RegisterDbContexts<AdminIdentityDbContext, IdentityServerConfigurationDbContext,
-                    IdentityServerPersistedGrantDbContext, IdentityServerDataProtectionDbContext>(Configuration);
+            services.RegisterDbContexts<AdminIdentityDbContext, IdentityServerConfigurationDbContext, IdentityServerPersistedGrantDbContext, IdentityServerDataProtectionDbContext>(Configuration);
         }
 
         public virtual void RegisterAuthentication(IServiceCollection services)
         {
             services.AddAuthenticationServices<AdminIdentityDbContext, UserIdentity, UserIdentityRole>(Configuration);
-            services
-                .AddIdentityServer<IdentityServerConfigurationDbContext, IdentityServerPersistedGrantDbContext,
-                    UserIdentity>(Configuration);
+            services.AddIdentityServer<IdentityServerConfigurationDbContext, IdentityServerPersistedGrantDbContext, UserIdentity>(Configuration);
         }
 
         public virtual void RegisterAuthorization(IServiceCollection services)
@@ -126,20 +119,26 @@ namespace IdentityServer.STS.Identity
         {
             services.AddHsts(options =>
             {
-                options.Preload           = true;
+                options.Preload = true;
                 options.IncludeSubDomains = true;
-                options.MaxAge            = TimeSpan.FromDays(365);
+                options.MaxAge = TimeSpan.FromDays(365);
             });
         }
 
         protected IRootConfiguration CreateRootConfiguration()
         {
             var rootConfiguration = new RootConfiguration();
-            Configuration.GetSection(ConfigurationConsts.AdminConfigurationKey)
-                .Bind(rootConfiguration.AdminConfiguration);
-            Configuration.GetSection(ConfigurationConsts.RegisterConfigurationKey)
-                .Bind(rootConfiguration.RegisterConfiguration);
+            Configuration.GetSection(ConfigurationConsts.AdminConfigurationKey).Bind(rootConfiguration.AdminConfiguration);
+            Configuration.GetSection(ConfigurationConsts.RegisterConfigurationKey).Bind(rootConfiguration.RegisterConfiguration);
             return rootConfiguration;
         }
     }
 }
+
+
+
+
+
+
+
+

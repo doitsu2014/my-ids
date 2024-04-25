@@ -1,7 +1,7 @@
-﻿#nullable disable
-
 using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
 
 namespace IdentityServer.Admin.EntityFramework.PostgreSQL.Migrations.IdentityServerConfiguration
 {

@@ -1,4 +1,4 @@
-﻿namespace IdentityServer.Admin.EntityFramework.SqlServer.Helpers
+namespace IdentityServer.Admin.EntityFramework.SqlServer.Helpers
 {
     public class MigrationAssembly
     {

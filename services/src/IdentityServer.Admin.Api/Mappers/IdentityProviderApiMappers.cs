@@ -1,7 +1,11 @@
-﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
+// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
+using System.Collections.Generic;
 using AutoMapper;
+using Duende.IdentityServer.EntityFramework.Entities;
+using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Dtos.IdentityProvider;
+using Skoruba.Duende.IdentityServer.Admin.EntityFramework.Extensions.Common;
 
 namespace IdentityServer.Admin.Api.Mappers
 {

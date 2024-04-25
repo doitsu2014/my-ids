@@ -1,32 +1,32 @@
-﻿// Copyright (c) Jan Škoruba. All Rights Reserved.
+// Copyright (c) Jan Škoruba. All Rights Reserved.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using Dtech.IdentityServer.Domain.Entities.Identity;
 using HealthChecks.UI.Client;
-using IdentityServer.Admin.Api.Configuration;
-using IdentityServer.Admin.Api.Configuration.Authorization;
-using IdentityServer.Admin.Api.ExceptionHandling;
-using IdentityServer.Admin.Api.Helpers;
-using IdentityServer.Admin.Api.Mappers;
-using IdentityServer.Admin.Api.Resources;
-using IdentityServer.Admin.EntityFramework.Shared.DbContexts;
-using IdentityServer.Shared.Dtos;
-using IdentityServer.Shared.Dtos.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Skoruba.AuditLogging.EntityFramework.Entities;
+using IdentityServer.Admin.Api.Configuration;
+using IdentityServer.Admin.Api.Configuration.Authorization;
+using IdentityServer.Admin.Api.Configuration.Constants;
+using IdentityServer.Admin.Api.ExceptionHandling;
+using IdentityServer.Admin.Api.Helpers;
+using IdentityServer.Admin.Api.Mappers;
+using IdentityServer.Admin.Api.Resources;
 using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Extensions;
 using Skoruba.Duende.IdentityServer.Admin.BusinessLogic.Identity.Extensions;
+using IdentityServer.Admin.EntityFramework.Shared.DbContexts;
+using IdentityServer.Admin.EntityFramework.Shared.Entities.Identity;
 using Skoruba.Duende.IdentityServer.Shared.Configuration.Helpers;
+using IdentityServer.Shared.Dtos;
+using IdentityServer.Shared.Dtos.Identity;
 
 namespace IdentityServer.Admin.Api
 {
@@ -141,6 +141,7 @@ namespace IdentityServer.Admin.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+
                 endpoints.MapHealthChecks("/health", new HealthCheckOptions
                 {
                     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
