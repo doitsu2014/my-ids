@@ -3,22 +3,29 @@
 
 name: .NET
 
+# on:
+#   push:
+#     branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+    - main
+    - release/*
 
 jobs:
-  build:
-
+  build_docker_image:
     runs-on: ubuntu-latest
-
     steps:
     - name: Build and push Docker images
       # You may pin to the exact commit or the version.
       # uses: docker/build-push-action@2cdde995de11925a030ce8070c3d77a52ffcf1c0
       uses: docker/build-push-action@v5.3.0
       with:
-        # List of a customs host-to-IP mapping (e.g., docker:10.180.0.1)
-        add-hosts: # optional
+        # Build's context is the set of files located in the specified PATH or URL
+        context: ./services
+        # Path to the Dockerfile
+        file: ./services/IdentityServer.Admin.Dockerfile
+        tags: latest
