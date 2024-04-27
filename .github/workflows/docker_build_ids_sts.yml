@@ -43,4 +43,4 @@ jobs:
         # Path to the Dockerfile
         file: "./services/IdentityServer.Api.Dockerfile"
         push: true
-        tags: doitsu2014/doitsu-technology-ids-admin:${{ env.VERSION }}
+        tags: doitsu2014/doitsu-technology-ids-sts:${{ env.VERSION }}
