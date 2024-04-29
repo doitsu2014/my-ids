@@ -1,0 +1,16 @@
+name: deploy-my-ids
+
+on:
+  push:
+    branches:
+    - release/*
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Kubernetes cluster  
+        uses: Azure/k8s-deploy@v5.0.0
+
+    
+     
