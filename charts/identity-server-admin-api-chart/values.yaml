@@ -4,15 +4,15 @@
 replicaCount: 1
 
 image:
-  repository: k8s-instance 
+  repository: hub.docker.com/doitsu2014/doitsu-technology-ids-admin-api
   pullPolicy: Always
-  tag: "latest"
+  tag: latest
 
 imageCredentials:
-  registry: changeme
-  username: changeme
-  password: changeme
-  email: no-reply@etreem.com
+  registry: hub.docker.com
+  username: doitsu2014 
+  password: __ 
+  email: no-reply@dtech.com
 
 nameOverride: ""
 fullnameOverride: ""
@@ -59,32 +59,49 @@ ingress:
   className: ""
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
-  hosts:
-    - host: chart-example.local
-      paths:
-        - path: /
-          pathType: Prefix
-  tls:
-    - secretName: tls-secret
-      hosts:
-        - chart-example.local
+  hosts: []
+    # - host: chart-example.local
+    #   paths:
+    #     - path: /
+    #       pathType: Prefix
+    #       backendServicePort: 5000
+  tls: []
+    # - secretName: tls-secret
+    #   hosts:
+    #     - chart-example.local
 
-ingressApiGateway:
-  enabled: false 
-  className: ""
-  annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: "/$2"
-    nginx.ingress.kubernetes.io/app-root: "/k8s-instance"
-  hosts:
-    - host: api-gateway.localhost 
-      paths:
-        - path: /k8s-instance(/|$)(.*)
-          pathType: Prefix
-  tls:
-    - secretName: tls-secret
-      hosts:
-        - chart-example.local
+  # For api gateway
+  # enabled: false
+  # className: ""
+  # annotations:
+  #   nginx.ingress.kubernetes.io/use-regex: "true"
+  #   nginx.ingress.kubernetes.io/client-body-buffer-size: 4m
+  #   nginx.ingress.kubernetes.io/proxy-body-size: 8m
+  #   nginx.ingress.kubernetes.io/rewrite-target: "/prefix/$2"
+  #   nginx.ingress.kubernetes.io/app-root: "/prefix"
+  # hosts:
+  #   - host: chart-example.local
+  #     paths:
+  #       - path: /prefix(/|$)(.*)
+  #         pathType: Prefix
+  #         backendServicePort: 5000
+  # tls: []
+    # - secretName: tls-secret
+    #   hosts:
+    #     - chart-example.local
+
+secretData:
+  "ConnectionStrings:ConfigurationDbConnection": ""
+  "ConnectionStrings:PersistedGrantDbConnection": ""
+  "ConnectionStrings:IdentityDbConnection": ""
+  "ConnectionStrings:AdminLogDbConnection": ""
+  "ConnectionStrings:AdminAuditLogDbConnection": ""
+  "ConnectionStrings:DataProtectionDbConnection": ""
+  "AdminApiConfiguration:ApiName": "api.admin"
+  "AdminApiConfiguration:ApiVersion": "v1"
+  "AdminApiConfiguration:ApiBaseUrl": "http://admin-api:5000"
+  "AdminApiConfiguration:IdentityServerBaseUrl": "http://sts:5000"
+  "Serilog:WriteTo:2:Args:connectionString": ""
 
 resources:
   {}
