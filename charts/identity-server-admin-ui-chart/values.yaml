@@ -1,0 +1,148 @@
+# Default values for k8s-instance.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+
+image:
+  repository: doitsu-technology-ids-admin
+  tag: latest
+  # repository: registry.hub.docker.com/doitsu2014/doitsu-technology-ids-admin
+  # tag: refs_heads_main_0976358d14bd8aafadf613f8114874e1f182ea60
+
+  pullPolicy: Always
+
+imageCredentials:
+  registry: registry.hub.docker.com
+  username: doitsu2014
+  password: __
+  email: no-reply@dtech.com
+
+nameOverride: ""
+fullnameOverride: ""
+env: []
+podAnnotations: {}
+serviceAnnotations: {}
+
+podSecurityContext:
+  {}
+  # fsGroup: 2000
+
+securityContext:
+  {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 44303
+  ports:
+    - port: 5000
+      targetPort: http
+      protocol: TCP
+      name: http
+    - port: 44303
+      targetPort: https
+      protocol: TCP
+      name: https
+
+container_ports:
+  - name: http
+    containerPort: 5000
+    protocol: TCP
+  - name: https
+    containerPort: 44303
+    protocol: TCP
+
+ingress:
+  enabled: false
+  className: ""
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+  hosts:
+    []
+    # - host: chart-example.local
+    #   paths:
+    #     - path: /
+    #       pathType: Prefix
+    #       backendServicePort: 5000
+  tls:
+    []
+    # - secretName: tls-secret
+    #   hosts:
+    #     - chart-example.local
+
+  # For api gateway
+  # enabled: false
+  # className: ""
+  # annotations:
+  #   nginx.ingress.kubernetes.io/use-regex: "true"
+  #   nginx.ingress.kubernetes.io/client-body-buffer-size: 4m
+  #   nginx.ingress.kubernetes.io/proxy-body-size: 8m
+  #   nginx.ingress.kubernetes.io/rewrite-target: "/prefix/$2"
+  #   nginx.ingress.kubernetes.io/app-root: "/prefix"
+  # hosts:
+  #   - host: chart-example.local
+  #     paths:
+  #       - path: /prefix(/|$)(.*)
+  #         pathType: Prefix
+  #         backendServicePort: 5000
+  # tls: []
+  # - secretName: tls-secret
+  #   hosts:
+  #     - chart-example.local
+
+secretData:
+  "ConnectionStrings:ConfigurationDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+  "ConnectionStrings:PersistedGrantDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+  "ConnectionStrings:IdentityDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+  "ConnectionStrings:AdminLogDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+  "ConnectionStrings:AdminAuditLogDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+  "ConnectionStrings:DataProtectionDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+  "AdminConfiguration:PageTitle": "Doitsu Technology Admin"
+  "AdminConfiguration:FaviconUri": "~/favicon.ico"
+  "AdminConfiguration:IdentityAdminRedirectUri": "http://identity-server-admin-ui:5000/signin-oidc"
+  "AdminConfiguration:IdentityServerBaseUrl": "http://identity-server-sts:5000"
+  "AdminConfiguration:ClientId": "dtech.superadmin"
+  "AdminConfiguration:ClientSecret": "zaQ@1234"
+  "IdentityData:Users:0:Username": "admin"
+  "IdentityData:Users:0:Password": "zaQ@1234"
+  "IdentityData:Users:0:Email": "admin@doitsu.tech"
+  "IdentityServerData:Clients:0:ClientId": "dtech.superadmin"
+  "IdentityServerData:Clients:0:ClientName": "dtech.superadmin"
+  "IdentityServerData:Clients:0:ClientUri": "http://identity-server-admin-ui:5000"
+  "IdentityServerData:Clients:0:ClientSecrets:0:Value": "zaQ@1234"
+  "IdentityServerData:Clients:0:RedirectUris:0": "http://identity-server-admin-ui:5000/signin-oidc"
+  "IdentityServerData:Clients:0:FrontChannelLogoutUri": "http://identity-server-admin-ui:5000/signout-oidc"
+  "IdentityServerData:Clients:0:PostLogoutRedirectUris:0": "http://identity-server-admin-ui:5000/signout-callback-oidc"
+  "IdentityServerData:Clients:0:AllowedCorsOrigins:0": "http://identity-server-admin-ui:5000"
+  "IdentityServerData:Clients:1:RedirectUris:0": "http://identity-server-admin-ui:5000/swagger/oauth2-redirect.html"
+  "IdentityServerData:Clients:1:AllowedCorsOrigins:0": "http://identity-server-admin-ui:5000"
+  "Serilog:WriteTo:2:Args:connectionString": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+
+resources:
+  {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

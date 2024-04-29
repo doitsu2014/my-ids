@@ -20,8 +20,8 @@ spec:
       labels:
         {{- include "k8s-instance.selectorLabels" . | nindent 8 }}
     spec:
-      imagePullSecrets:
-        - name: {{ .Chart.Name }}-image-pull-secrets 
+      # imagePullSecrets:
+      #   - name: {{ .Chart.Name }}-image-pull-secrets 
 
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}

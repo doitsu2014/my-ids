@@ -42,6 +42,6 @@ jobs:
         context: "./services/"
         # Path to the Dockerfile
         file: "./services/IdentityServer.Api.Dockerfile"
-        platforms: linux/amd64,linux/arm64
+        platforms: linux/amd64
         push: true
         tags: doitsu2014/doitsu-technology-ids-sts:${{ env.VERSION }}
