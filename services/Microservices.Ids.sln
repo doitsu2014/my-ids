@@ -9,7 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{068765D3-4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{2CA92780-6075-4550-9CED-F929DDACDEBE}"
 	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
 		IdentityServer.Admin.Dockerfile = IdentityServer.Admin.Dockerfile
 		IdentityServer.Api.Dockerfile = IdentityServer.Api.Dockerfile
 		IdentityServer.Admin.Api.Dockerfile = IdentityServer.Admin.Api.Dockerfile
