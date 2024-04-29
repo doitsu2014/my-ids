@@ -4,10 +4,12 @@
 replicaCount: 1
 
 image:
-  repository: registry.hub.docker.com/doitsu2014/doitsu-technology-ids-admin
+  repository: doitsu-technology-ids-admin
+  tag: latest
+  # repository: registry.hub.docker.com/doitsu2014/doitsu-technology-ids-admin
+  # tag: refs_heads_main_0976358d14bd8aafadf613f8114874e1f182ea60
+
   pullPolicy: Always
-  # tag: latest
-  tag: refs_heads_main_0976358d14bd8aafadf613f8114874e1f182ea60
 
 imageCredentials:
   registry: registry.hub.docker.com
