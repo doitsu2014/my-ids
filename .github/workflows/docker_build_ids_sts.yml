@@ -12,7 +12,7 @@ name: docker_build_ids_sts
 on:
   push:
     branches:
-      # - main
+      - main
       - release/*
     tags:
       - "v*.*.*"
@@ -54,6 +54,8 @@ jobs:
             type=semver,pattern={{major}}.{{minor}}
             type=semver,pattern={{major}}
             type=sha
+          flavor: |
+            latest=auto
       - name: Build and push Docker images
         uses: docker/build-push-action@v5.3.0
         # with:
