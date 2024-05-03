@@ -110,6 +110,7 @@ secretData:
   "AdminConfiguration:Theme": ""
   "AdminConfiguration:CustomThemeCss": ""
   "AdminConfiguration:IdentityAdminBaseUrl": "http://my-ids-admin:5000"
+  "Serilog:WriteTo:2:Args:connectionString": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
 
 resources:
   {}
