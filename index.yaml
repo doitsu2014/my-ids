@@ -1,0 +1,96 @@
+apiVersion: v1
+entries:
+  identity-server-admin-api:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T09:07:03.600179607Z"
+    description: A helm chart for identity-server-admin-api
+    digest: 2f716f4135a2e29baefb94247e48d0f64923bbe76faf2f1fb090419407bb7d30
+    name: identity-server-admin-api
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-admin-api-1.0.5/identity-server-admin-api-1.0.5.tgz
+    version: 1.0.5
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T09:00:11.762556192Z"
+    description: A helm chart for identity-server-admin-api
+    digest: b21875593be10fd3408f3ee55ab7228e6191fefa961ed4ac62f0f465f240467e
+    name: identity-server-admin-api
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-admin-api-1.0.4/identity-server-admin-api-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T05:05:54.216162026Z"
+    description: A helm chart for identity-server-admin-api
+    digest: db8aeae435982af04add259f0028013a66163fed5aeb79a7115071db62713fc1
+    name: identity-server-admin-api
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-admin-api-1.0.3/identity-server-admin-api-1.0.3.tgz
+    version: 1.0.3
+  identity-server-admin-ui:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T09:07:03.710283375Z"
+    description: A helm chart for identity-server-admin-ui
+    digest: b3e7c017d85f35fa5768bd36f297565c429a2cd211257d0a09829f92a531700a
+    name: identity-server-admin-ui
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-admin-ui-1.0.5/identity-server-admin-ui-1.0.5.tgz
+    version: 1.0.5
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T09:00:11.894633858Z"
+    description: A helm chart for identity-server-admin-ui
+    digest: 4d8be092906ce32e41e27748728bffd6fc00a5842e59bbf910eb916bbf0998ab
+    name: identity-server-admin-ui
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-admin-ui-1.0.4/identity-server-admin-ui-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T05:05:54.309447358Z"
+    description: A helm chart for identity-server-admin-ui
+    digest: d09ed805dddcb8cde43ce64c4d0f9be2b960417e3d2e18df9970bc193240750b
+    name: identity-server-admin-ui
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-admin-ui-1.0.3/identity-server-admin-ui-1.0.3.tgz
+    version: 1.0.3
+  identity-server-sts:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T09:07:03.830817649Z"
+    description: A helm chart for identity-server-sts
+    digest: df7089df2178a35269926ef65b75311317040dde92857c5c05b73a8f4bf9d8ce
+    name: identity-server-sts
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-sts-1.0.5/identity-server-sts-1.0.5.tgz
+    version: 1.0.5
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T09:00:12.019885931Z"
+    description: A helm chart for identity-server-sts
+    digest: 0b476ab507338cf092890474d4ae4202ebf190c6cb76cb70aeeb088dd35fbe98
+    name: identity-server-sts
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-sts-1.0.4/identity-server-sts-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T05:05:54.410036095Z"
+    description: A helm chart for identity-server-sts
+    digest: 4e2632437572938283ea1d0f27a82e3d8adc24d585aa6dde1e8a9809615931c5
+    name: identity-server-sts
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-sts-1.0.3/identity-server-sts-1.0.3.tgz
+    version: 1.0.3
+generated: "2024-05-03T09:07:03.830843827Z"
