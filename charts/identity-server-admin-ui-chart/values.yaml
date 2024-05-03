@@ -7,6 +7,7 @@ image:
   # repository: doitsu-technology-ids-admin
   # tag: latest
   repository: registry.hub.docker.com/doitsu2014/doitsu-technology-ids-admin
+  pullPolicy: Always
   tag: latest
 
   pullPolicy: IfNotPresent

@@ -4,7 +4,7 @@
 replicaCount: 1
 
 image:
-  repository: hub.docker.com/doitsu2014/doitsu-technology-ids-sts
+  repository: registry.hub.docker.com/doitsu2014/doitsu-technology-ids-sts
   pullPolicy: Always
   tag: latest
 
