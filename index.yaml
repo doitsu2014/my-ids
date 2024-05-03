@@ -3,6 +3,16 @@ entries:
   identity-server-admin-api:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-05-03T17:01:46.839130075Z"
+    description: A helm chart for identity-server-admin-api
+    digest: 54fa91b5181abd80a517de5bf85917d9efa8afeafd4be12b414d5b8a7e71492c
+    name: identity-server-admin-api
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-admin-api-1.0.12/identity-server-admin-api-1.0.12.tgz
+    version: 1.0.12
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-05-03T16:29:36.164228646Z"
     description: A helm chart for identity-server-admin-api
     digest: 78637ed1a61bb8648133dafe453afc44cae7552905108ef53998f7a051da393a
@@ -92,6 +102,16 @@ entries:
     - https://github.com/doitsu2014/my-ids/releases/download/identity-server-admin-api-1.0.3/identity-server-admin-api-1.0.3.tgz
     version: 1.0.3
   identity-server-admin-ui:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T17:01:47.000537713Z"
+    description: A helm chart for identity-server-admin-ui
+    digest: 2e54162cb583a4f4062384cefc69e83fd307e56c79eebab08fd1da3a5dfd462d
+    name: identity-server-admin-ui
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-admin-ui-1.0.12/identity-server-admin-ui-1.0.12.tgz
+    version: 1.0.12
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2024-05-03T16:29:36.261699775Z"
@@ -185,6 +205,16 @@ entries:
   identity-server-sts:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2024-05-03T17:01:47.160835263Z"
+    description: A helm chart for identity-server-sts
+    digest: 918784fd0fbb126d4444d6f2c6bc1ebe49feb0d5cc4ccee417ba80c5cb71a74b
+    name: identity-server-sts
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-sts-1.0.12/identity-server-sts-1.0.12.tgz
+    version: 1.0.12
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2024-05-03T16:29:36.35744839Z"
     description: A helm chart for identity-server-sts
     digest: e8a671da3bff8b627b3dd0abce805cb73f77db2b5a75353594213d3fe586125a
@@ -273,4 +303,4 @@ entries:
     urls:
     - https://github.com/doitsu2014/my-ids/releases/download/identity-server-sts-1.0.3/identity-server-sts-1.0.3.tgz
     version: 1.0.3
-generated: "2024-05-03T16:29:36.35754949Z"
+generated: "2024-05-03T17:01:47.16094644Z"
