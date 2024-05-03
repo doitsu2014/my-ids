@@ -1,13 +1,21 @@
 name: deploy-my-ids
 
 on:
-  push:
-    branches:
-      - release/*
+  workflow_dispatch:
 
 jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to Kubernetes cluster
-        uses: Azure/k8s-deploy@v5.0.0
+      - name: Checkout
+        uses: actions/checkout@v4.1.4
+
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.6.0
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
