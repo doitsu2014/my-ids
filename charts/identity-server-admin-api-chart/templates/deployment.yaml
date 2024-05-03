@@ -22,7 +22,6 @@ spec:
     spec:
       imagePullSecrets:
         - name: {{ .Chart.Name }}-image-pull-secrets 
-
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -32,11 +31,12 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            - ASPNETCORE_ENVIRONMENT: {{ .Values.appEnvironment }}
-          {{- with .Values.env }}
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-
+            - name: ASPNETCORE_ENVIRONMENT
+              value: {{ .Values.appEnvironment }}
+            {{- range $index, $env := .Values.env }}
+            - name: "{{ $env.name }}"
+              value: "{{ $env.value }}"
+            {{- end }}
           {{- with .Values.container_ports }}
           ports:
             {{- toYaml . | nindent 12 }}
