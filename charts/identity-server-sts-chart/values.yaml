@@ -16,6 +16,7 @@ imageCredentials:
 
 nameOverride: ""
 fullnameOverride: ""
+appEnvironment: "Development"
 env: []
 podAnnotations: {}
 serviceAnnotations: {}

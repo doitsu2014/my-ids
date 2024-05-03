@@ -16,6 +16,7 @@ imageCredentials:
 
 nameOverride: ""
 fullnameOverride: ""
+aspNetEnvironment: "Development"
 env: []
 podAnnotations: {}
 serviceAnnotations: {}
