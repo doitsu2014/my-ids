@@ -1,4 +1,4 @@
-name: deploy-my-ids
+name: release-helms
 
 on:
   workflow_dispatch:
@@ -19,3 +19,4 @@ jobs:
         uses: helm/chart-releaser-action@v1.6.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          charts_dir: charts/identity-server-admin-ui-chart
