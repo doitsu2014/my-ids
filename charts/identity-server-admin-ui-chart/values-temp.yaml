@@ -1,5 +1,4 @@
 # Default values for k8s-instance.
-
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 replicaCount: 1
@@ -8,7 +7,7 @@ image:
   # repository: doitsu-technology-ids-admin
   # tag: latest
   repository: registry.hub.docker.com/doitsu2014/doitsu-technology-ids-admin
-  tag: latest 
+  tag: latest
 
   pullPolicy: IfNotPresent
 
@@ -20,8 +19,9 @@ imageCredentials:
 
 nameOverride: ""
 fullnameOverride: ""
-appEnvironment: Production
+appEnvironment: Development
 env: []
+
 podAnnotations: {}
 serviceAnnotations: {}
 
@@ -62,21 +62,22 @@ container_ports:
 ingress:
   enabled: false
   className: ""
-  annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-    nginx.ingress.kubernetes.io/proxy-buffering: "on"
-    nginx.ingress.kubernetes.io/proxy-body-size: "8m"
-    nginx.ingress.kubernetes.io/proxy-buffer-size: "1m"
-    nginx.ingress.kubernetes.io/proxy-buffers-number: "12"
-    nginx.ingress.kubernetes.io/client-body-buffer-size: 1m
-    nginx.ingress.kubernetes.io/affinity: "cookie"
+  annotations: {}
+    # nginx.ingress.kubernetes.io/use-regex: "true"
+    # nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    # nginx.ingress.kubernetes.io/proxy-buffering: "on"
+    # nginx.ingress.kubernetes.io/proxy-body-size: "8m"
+    # nginx.ingress.kubernetes.io/proxy-buffer-size: "1m"
+    # nginx.ingress.kubernetes.io/proxy-buffers-number: "12"
+    # nginx.ingress.kubernetes.io/client-body-buffer-size: 1m
+    # nginx.ingress.kubernetes.io/affinity: "cookie"
   hosts:
-    - host: ids-admin.doitsu.tech
-      paths:
-        - path: /
-          pathType: Prefix
-          backendServicePort: 44303
+    []
+    # - host: chart-example.local
+    #   paths:
+    #     - path: /
+    #       pathType: Prefix
+    #       backendServicePort: 5000
   tls:
     []
     # - secretName: tls-secret
@@ -104,16 +105,16 @@ ingress:
   #     - chart-example.local
 
 secretData:
-  "ConnectionStrings:ConfigurationDbConnection": "Server=postgressql-postgresql-hl.infrastructure;Database=my_ids;User Id=postgres;Password=8zNXZPVYMQ;"
-  "ConnectionStrings:PersistedGrantDbConnection": "Server=postgressql-postgresql-hl.infrastructure;Database=my_ids;User Id=postgres;Password=8zNXZPVYMQ;"
-  "ConnectionStrings:IdentityDbConnection": "Server=postgressql-postgresql-hl.infrastructure;Database=my_ids;User Id=postgres;Password=8zNXZPVYMQ;"
-  "ConnectionStrings:AdminLogDbConnection": "Server=postgressql-postgresql-hl.infrastructure;Database=my_ids;User Id=postgres;Password=8zNXZPVYMQ;"
-  "ConnectionStrings:AdminAuditLogDbConnection": "Server=postgressql-postgresql-hl.infrastructure;Database=my_ids;User Id=postgres;Password=8zNXZPVYMQ;"
-  "ConnectionStrings:DataProtectionDbConnection": "Server=postgressql-postgresql-hl.infrastructure;Database=my_ids;User Id=postgres;Password=8zNXZPVYMQ;"
+  "ConnectionStrings:ConfigurationDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+  "ConnectionStrings:PersistedGrantDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+  "ConnectionStrings:IdentityDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+  "ConnectionStrings:AdminLogDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+  "ConnectionStrings:AdminAuditLogDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
+  "ConnectionStrings:DataProtectionDbConnection": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
   "AdminConfiguration:PageTitle": "Doitsu Technology Admin"
   "AdminConfiguration:FaviconUri": "~/favicon.ico"
-  "AdminConfiguration:IdentityAdminRedirectUri": "https://ids-admin.doitsu.tech/signin-oidc"
-  "AdminConfiguration:IdentityServerBaseUrl": "https://ids-sts.doitsu.tech"
+  "AdminConfiguration:IdentityAdminRedirectUri": "http://identity-server-admin-ui:5000/signin-oidc"
+  "AdminConfiguration:IdentityServerBaseUrl": "http://identity-server-sts:5000"
   "AdminConfiguration:ClientId": "dtech.superadmin"
   "AdminConfiguration:ClientSecret": "zaQ@1234"
   "IdentityData:Users:0:Username": "admin"
@@ -121,15 +122,15 @@ secretData:
   "IdentityData:Users:0:Email": "admin@doitsu.tech"
   "IdentityServerData:Clients:0:ClientId": "dtech.superadmin"
   "IdentityServerData:Clients:0:ClientName": "dtech.superadmin"
-  "IdentityServerData:Clients:0:ClientUri": "https://ids-admin.doitsu.tech"
+  "IdentityServerData:Clients:0:ClientUri": "http://identity-server-admin-ui:5000"
   "IdentityServerData:Clients:0:ClientSecrets:0:Value": "zaQ@1234"
-  "IdentityServerData:Clients:0:RedirectUris:0": "https://ids-admin.doitsu.tech/signin-oidc"
-  "IdentityServerData:Clients:0:FrontChannelLogoutUri": "https://ids-admin.doitsu.tech/signout-oidc"
-  "IdentityServerData:Clients:0:PostLogoutRedirectUris:0": "https://ids-admin.doitsu.tech/signout-callback-oidc"
-  "IdentityServerData:Clients:0:AllowedCorsOrigins:0": "https://ids-admin.doitsu.tech"
-  "IdentityServerData:Clients:1:RedirectUris:0": "https://ids-admin.doitsu.tech/swagger/oauth2-redirect.html"
-  "IdentityServerData:Clients:1:AllowedCorsOrigins:0": "https://ids-admin.doitsu.tech"
-  "Serilog:WriteTo:2:Args:connectionString": "Server=postgressql-postgresql-hl.infrastructure;Database=my_ids;User Id=postgres;Password=8zNXZPVYMQ;"
+  "IdentityServerData:Clients:0:RedirectUris:0": "http://identity-server-admin-ui:5000/signin-oidc"
+  "IdentityServerData:Clients:0:FrontChannelLogoutUri": "http://identity-server-admin-ui:5000/signout-oidc"
+  "IdentityServerData:Clients:0:PostLogoutRedirectUris:0": "http://identity-server-admin-ui:5000/signout-callback-oidc"
+  "IdentityServerData:Clients:0:AllowedCorsOrigins:0": "http://identity-server-admin-ui:5000"
+  "IdentityServerData:Clients:1:RedirectUris:0": "http://identity-server-admin-ui:5000/swagger/oauth2-redirect.html"
+  "IdentityServerData:Clients:1:AllowedCorsOrigins:0": "http://identity-server-admin-ui:5000"
+  "Serilog:WriteTo:2:Args:connectionString": "Server=localhost;Database=my_ids;User Id=postgres;Password=1234567890;"
 
 resources:
   {}

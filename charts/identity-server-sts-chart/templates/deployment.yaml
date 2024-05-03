@@ -47,7 +47,7 @@ spec:
               port: http
           volumeMounts:
             - name: appsettings-secrets
-              mountPath: /app
+              mountPath: /app/secrets
               readOnly: true
           readinessProbe:
             httpGet:
