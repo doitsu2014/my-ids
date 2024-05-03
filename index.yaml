@@ -1,0 +1,36 @@
+apiVersion: v1
+entries:
+  identity-server-admin-api:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T04:51:51.704706172Z"
+    description: A helm chart for identity-server-admin-api
+    digest: 88831ec9084a146797d74bb4f219f18db03e55683069981cfae2a5048b1c9722
+    name: identity-server-admin-api
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-admin-api-1.0.1/identity-server-admin-api-1.0.1.tgz
+    version: 1.0.1
+  identity-server-admin-ui:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T04:51:51.796358906Z"
+    description: A helm chart for identity-server-admin-ui
+    digest: 1ba1163fa198eb38132abde99fd3f8f665339246ad7b9a24f8f73b2dae4243f7
+    name: identity-server-admin-ui
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-admin-ui-1.0.1/identity-server-admin-ui-1.0.1.tgz
+    version: 1.0.1
+  identity-server-sts:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2024-05-03T04:51:51.898233387Z"
+    description: A helm chart for identity-server-sts
+    digest: e98a4dcb1d5a99caf85378aebc66363c441163aa58e690659c19684f50c1edc7
+    name: identity-server-sts
+    type: application
+    urls:
+    - https://github.com/doitsu2014/my-ids/releases/download/identity-server-sts-1.0.1/identity-server-sts-1.0.1.tgz
+    version: 1.0.1
+generated: "2024-05-03T04:51:51.898239699Z"
