@@ -10,9 +10,9 @@ name: docker_build_ids_admin
 #     branches: [ "main" ]
 
 on:
+  workflow_dispatch: 
   push:
     branches:
-      - main
       - release/*
     tags:
       - "v*.*.*"
