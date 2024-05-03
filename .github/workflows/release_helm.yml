@@ -1,14 +1,23 @@
-name: deploy-my-ids
+name: release-helms
 
 on:
   workflow_dispatch:
 
 jobs:
-  deployment:
+  release:
     runs-on: ubuntu-latest
+    # depending on default permission settings for your org (contents being read-only or read-write for workloads), you will have to add permissions
+    # see: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
+    permissions:
+      contents: write    
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.4
+
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
       - name: Install Helm
         uses: azure/setup-helm@v4
@@ -19,3 +28,5 @@ jobs:
         uses: helm/chart-releaser-action@v1.6.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          charts_dir: "./charts/identity-server-admin-ui-chart/"
+          
