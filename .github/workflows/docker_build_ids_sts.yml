@@ -59,19 +59,11 @@ jobs:
             latest=auto
       - name: Build and push Docker images
         uses: docker/build-push-action@v5.3.0
-        # with:
-        #   # Build's context is the set of files located in the specified PATH or URL
-        #   context: "./services/"
-        #   # Path to the Dockerfile
-        #   file: "./services/IdentityServer.Admin.Dockerfile"
-        #   platforms: linux/amd64,linux/arm64
-        #   push: true
-        #   tags: doitsu2014/doitsu-technology-ids-admin:${{ env.VERSION }}
         with:
           # Build's context is the set of files located in the specified PATH or URL
           context: "./services/"
           # Path to the Dockerfile
-          file: "./services/IdentityServer.Admin.Dockerfile"
+          file: "./services/IdentityServer.Api.Dockerfile"
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
