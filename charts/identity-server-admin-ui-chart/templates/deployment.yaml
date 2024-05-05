@@ -47,17 +47,17 @@ spec:
           ports:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: http
           volumeMounts:
             - name: appsettings-secrets
               mountPath: /app/secrets
               readOnly: true
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
           readinessProbe:
             httpGet:
-              path: /health
+              path: /
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

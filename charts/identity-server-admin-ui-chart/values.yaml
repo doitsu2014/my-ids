@@ -10,8 +10,6 @@ image:
   pullPolicy: Always
   tag: latest
 
-  pullPolicy: IfNotPresent
-
 imageCredentials:
   registry: registry.hub.docker.com
   username: doitsu2014
