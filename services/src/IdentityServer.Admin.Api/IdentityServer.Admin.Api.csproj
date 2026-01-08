@@ -10,8 +10,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-		<PackageReference Include="AspNetCore.HealthChecks.MySql" Version="9.0.0" />
-		<PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
 		<PackageReference Include="AspNetCore.HealthChecks.OpenIdConnectServer" Version="9.0.0" />
 		<PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="9.0.0" />
 		<PackageReference Include="AspNetCore.HealthChecks.UI" Version="9.0.0" />
@@ -46,8 +44,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\IdentityServer.Admin.EntityFramework.MySql\IdentityServer.Admin.EntityFramework.MySql.csproj" />
-        <ProjectReference Include="..\IdentityServer.Admin.EntityFramework.PostgreSQL\IdentityServer.Admin.EntityFramework.PostgreSQL.csproj" />
         <ProjectReference Include="..\IdentityServer.Admin.EntityFramework.SqlServer\IdentityServer.Admin.EntityFramework.SqlServer.csproj" />
         <ProjectReference Include="..\IdentityServer.Shared\IdentityServer.Shared.csproj" />
     </ItemGroup>

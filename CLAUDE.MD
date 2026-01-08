@@ -26,6 +26,7 @@ The project consists of three main services:
 
 - **Framework**: .NET 9 (Microservices.Ids.sln)
 - **Authentication**: Duende IdentityServer
+- **Database**: Microsoft SQL Server (MSSQL)
 - **Containerization**: Docker
 - **Orchestration**: Kubernetes (Helm charts available)
 - **CI/CD**: GitHub Actions
@@ -155,6 +156,7 @@ kubectl get pods -l app=ids
 - Helm charts enable easy Kubernetes deployment and configuration management
 - GitHub Actions handle automated building and publishing of Docker images
 - **Upgraded to .NET 9**: All projects target .NET 9 with updated package dependencies
+- **Database Support**: Only Microsoft SQL Server (MSSQL) is supported. MySQL and PostgreSQL providers have been removed
 
 ## Resources
 
