@@ -24,8 +24,8 @@ The project consists of three main services:
 
 ### Technology Stack
 
-- **Framework**: .NET/C# (Microservices.Ids.sln)
-- **Authentication**: IdentityServer4
+- **Framework**: .NET 9 (Microservices.Ids.sln)
+- **Authentication**: Duende IdentityServer
 - **Containerization**: Docker
 - **Orchestration**: Kubernetes (Helm charts available)
 - **CI/CD**: GitHub Actions
@@ -49,7 +49,7 @@ my-ids/
 
 ### Prerequisites
 
-- .NET SDK (check solution file for version)
+- .NET 9 SDK or later
 - Docker and Docker Compose
 - kubectl (for Kubernetes deployments)
 - Helm 3 (for chart deployments)
@@ -154,11 +154,13 @@ kubectl get pods -l app=ids
 - Each service has its own Dockerfile for independent deployment
 - Helm charts enable easy Kubernetes deployment and configuration management
 - GitHub Actions handle automated building and publishing of Docker images
+- **Upgraded to .NET 9**: All projects target .NET 9 with updated package dependencies
 
 ## Resources
 
-- [IdentityServer4 Documentation](https://identityserver4.readthedocs.io/)
-- [Skoruba IdentityServer4 Admin](https://github.com/skoruba/IdentityServer4.Admin)
+- [Duende IdentityServer Documentation](https://docs.duendesoftware.com/identityserver/v7/)
+- [Skoruba Duende IdentityServer Admin](https://github.com/skoruba/Duende.IdentityServer.Admin)
+- [.NET 9 Documentation](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/overview)
 - Project README: `README.md`
 - Service README: `services/README.md`
 
